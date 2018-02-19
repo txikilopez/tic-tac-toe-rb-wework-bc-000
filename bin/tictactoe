@@ -4,6 +4,6 @@ require_relative '../lib/tic_tac_toe'
 
 board = Array.new(9," ")
 
-display(board)
+display_board(board)
 
 play(board)
