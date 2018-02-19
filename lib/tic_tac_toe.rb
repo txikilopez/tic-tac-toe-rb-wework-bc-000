@@ -25,7 +25,7 @@ def play(board)
   if won?(board)
     puts("Congratulations " + winner(board) + "!")
   else
-    puts("The game was tied")
+    puts("Cat's Game!")
   end
 end
 
