@@ -116,6 +116,3 @@ def player_character(board)
     "X"
   end
 end
-
-board = ["X"," "]
-puts(player_character(board))
