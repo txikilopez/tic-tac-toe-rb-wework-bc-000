@@ -111,9 +111,9 @@ end
 #Player X or O
 def player_character(board)
   if turn_count(board).odd?
-    "X"
-  else
     "O"
+  else
+    "X"
   end
 end
 
