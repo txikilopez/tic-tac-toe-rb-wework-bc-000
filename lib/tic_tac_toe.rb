@@ -72,7 +72,8 @@ def turn(board)
   if valid_move?(board, index) == true
     move(board, index, player_character(board))
     display_board(board)
-  else valid_move?(board, index) == false
+  else
+    turn(board)
   end
 end
 
