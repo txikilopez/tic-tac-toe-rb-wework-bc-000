@@ -118,4 +118,4 @@ def player_character(board)
 end
 
 board = Array.new(9," ")
-puts("player_character(board)")
+puts(player_character(board))
