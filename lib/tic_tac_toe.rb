@@ -108,7 +108,7 @@ end
 
 
 board = Array.new(9," ")
-player_character
+player_character(board)
 
 #Player X or O
 def player_character(board)
