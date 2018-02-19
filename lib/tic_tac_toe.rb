@@ -1,9 +1,11 @@
 # Helper Method
+
+#Position Taken
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
-# Define your WIN_COMBINATIONS constant
+# WIN_COMBINATIONS
 WIN_COMBINATIONS =  [
   [0,1,2], #row 1
   [3,4,5], #row 2
@@ -60,4 +62,36 @@ end
 #turn count
 def turn_count(board)
   board.count{|x| x !=" "}
+end
+
+# Turn
+def turn(board)
+  puts("Please enter 1-9:")
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board, index) == true
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
+
+#Move
+def move(board, index, character = "X")
+  board[index] = character
+end
+
+#input to index
+def input_to_index(input)
+  index = input.to_i - 1
+end
+
+#Valid Move?
+def valid_move?(board, index)
+  if index.between?(0,8) && position_taken?(board, index) == false
+      true
+  else
+    false
+  end
 end
