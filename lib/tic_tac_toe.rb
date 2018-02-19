@@ -105,3 +105,16 @@ def display_board(board)
   puts("-----------")
   puts(" #{board[6]} | #{board[7]} | #{board[8]} ")
 end
+
+
+board = Array.new[9," "]
+player_character
+
+#Player X or O
+def player_character(board)
+  if turn_count.is_odd
+    "X"
+  else
+    "O"
+  end
+end
