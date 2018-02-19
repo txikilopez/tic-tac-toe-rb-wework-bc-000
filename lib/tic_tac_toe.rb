@@ -75,6 +75,8 @@ def turn(board)
   else
     turn(board)
   end
+  if won?(board)
+    puts("Congratulations " + winner(board))
 end
 
 #Move
