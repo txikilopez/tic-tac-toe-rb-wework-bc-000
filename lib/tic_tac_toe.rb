@@ -16,11 +16,20 @@ WIN_COMBINATIONS =  [
   [1,4,7], #column 2
   [2,5,8], #column 3
 ]
+
+  #Play
+  def play(board)
+    while !over?(board)
+    turn(board)
+  end
+  
+  
   
 #FULL BOARD CODE
 def full?(board)
   !(board.any? {|slot| slot == " " || slot == ""})
 end
+
 
 #WON CODE
 def won?(board)
@@ -52,6 +61,7 @@ def over?(board)
   won?(board) || draw?(board) || full?(board)  || turn_count(board) == 9
 end
 
+
 #WINNER CODE
 def winner(board)
   if winning_combo = won?(board)
@@ -59,10 +69,12 @@ def winner(board)
   end
 end
 
+
 #turn count
 def turn_count(board)
   board.count{|x| x !=" "}
 end
+
 
 # Turn
 def turn(board)
@@ -75,9 +87,8 @@ def turn(board)
   else
     turn(board)
   end
-  if won?(board)
-    puts("Congratulations " + winner(board))
 end
+
 
 #Move
 def move(board, index, character = "X")
@@ -88,6 +99,7 @@ end
 def input_to_index(input)
   index = input.to_i - 1
 end
+
 
 #Valid Move?
 def valid_move?(board, index)
@@ -109,9 +121,8 @@ def display_board(board)
 end
 
 
-
 #Player X or O
-def player_character(board)
+def current_player(board)
   if turn_count(board).odd?
     "O"
   else
