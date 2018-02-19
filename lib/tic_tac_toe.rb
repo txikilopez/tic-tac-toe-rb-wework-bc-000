@@ -18,12 +18,17 @@ WIN_COMBINATIONS =  [
 ]
 
   #Play
-  def play(board)
-    while !over?(board)
+def play(board)
+  until !over?(board)
     turn(board)
   end
-  
-  
+  if won?(board)
+    puts("Congratulations " + winner(board) + "!")
+  else
+    puts("The game was tied")
+  end
+end
+
   
 #FULL BOARD CODE
 def full?(board)
