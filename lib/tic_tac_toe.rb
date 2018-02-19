@@ -117,5 +117,5 @@ def player_character(board)
   end
 end
 
-board = Array.new(9," ")
+board = ["X"," "]
 puts(player_character(board))
