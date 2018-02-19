@@ -112,7 +112,7 @@ player_character
 
 #Player X or O
 def player_character(board)
-  if turn_count.is_odd
+  if turn_count.odd?
     "X"
   else
     "O"
